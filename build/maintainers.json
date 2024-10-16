@@ -770,8 +770,7 @@
   ],
   "/bilibili/user/video-all/:uid/:disableEmbed?": [],
   "/bilibili/user/video/:uid/:disableEmbed?": [
-    "DIYgod",
-    "Konano"
+    "DIYgod"
   ],
   "/bilibili/vsearch/:kw/:order?/:disableEmbed?/:tid?": [
     "pcrtool",
@@ -1288,9 +1287,6 @@
     "Qixingchen"
   ],
   "/ciidbnu/:id?": [
-    "nczitzk"
-  ],
-  "/cisia/:id?": [
     "nczitzk"
   ],
   "/civitai/discussions/:modelId": [
@@ -3066,12 +3062,6 @@
   ],
   "/hkjunkcall/": [
     "nczitzk"
-  ],
-  "/hko/earthquake": [
-    "after9"
-  ],
-  "/hko/weather": [
-    "calpa"
   ],
   "/hljucm/yjsy/:category?": [
     "nczitzk"
@@ -6869,8 +6859,7 @@
   "/weibo/user/:uid/:routeParams?": [
     "DIYgod",
     "iplusx",
-    "Rongronggg9",
-    "Konano"
+    "Rongronggg9"
   ],
   "/weibo/oasis/user/:userid": [
     "kt286"
