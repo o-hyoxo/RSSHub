@@ -330,9 +330,6 @@
   "/aibase/discover/:id?": [
     "nczitzk"
   ],
-  "/aibase/news": [
-    "zreo0"
-  ],
   "/aibase/topic/:id?/:filter?": [
     "nczitzk"
   ],
@@ -1305,9 +1302,6 @@
   "/ciweimao/chapter/:id": [
     "keocheung"
   ],
-  "/cjlu/yjsy/:cate": [
-    "chrisis58"
-  ],
   "/clickme/:site/:grouping/:name": [
     "hoilc"
   ],
@@ -1586,8 +1580,7 @@
     "TonyRL"
   ],
   "/damai/activity/:city/:category/:subcategory/:keyword?": [
-    "hoilc",
-    "Konano"
+    "hoilc"
   ],
   "/dangdang/notice/:type?": [
     "353325487"
@@ -3020,12 +3013,6 @@
     "hellodword ",
     "TonyRL",
     "Mas0n"
-  ],
-  "/hfut/hf/notice/:type?": [
-    "batemax"
-  ],
-  "/hfut/xc/notice/:type?": [
-    "batemax"
   ],
   "/hicairo/": [
     "cnkmmk"
@@ -4963,11 +4950,10 @@
     "TonyRL",
     "micheal-death"
   ],
-  "/picuki/profile/:id/:type?/:functionalFlag?": [
+  "/picuki/profile/:id/:functionalFlag?": [
     "hoilc",
     "Rongronggg9",
-    "devinmugen",
-    "NekoAria"
+    "devinmugen"
   ],
   "/pikabu/:type/:name": [],
   "/pikabu/user/:name": [
