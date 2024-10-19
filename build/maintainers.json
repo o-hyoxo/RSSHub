@@ -1457,9 +1457,6 @@
   "/coolapk/tuwen/:type?": [
     "xizeyoupan"
   ],
-  "/coolapk/tuwen-xinxian": [
-    "xizeyoupan"
-  ],
   "/coolapk/user/:uid/dynamic": [
     "xizeyoupan"
   ],
@@ -2736,6 +2733,9 @@
   ],
   "/gov/pbc/zcyj": [
     "Fatpandac"
+  ],
+  "/gov/pudong/zwgk": [
+    "himingway"
   ],
   "/gov/safe/business/:site?": [
     "nczitzk"
@@ -6453,6 +6453,9 @@
   ],
   "/tju/yzb/:type?": [
     "SuperPung"
+  ],
+  "/tkww/:column{.+}?": [
+    "quiniapiezoelectricity"
   ],
   "/tokeninsight/blog/:lang?": [
     "fuergaosi233"

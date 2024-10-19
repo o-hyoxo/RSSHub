@@ -16978,7 +16978,13 @@
           "dyhId": "看看号ID"
         },
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17003,7 +17009,13 @@
           "period": "默认为`daily`"
         },
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17027,7 +17039,13 @@
           "tag": "话题名称"
         },
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17050,7 +17068,13 @@
           "type": "默认为history"
         },
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17066,8 +17090,7 @@
       },
       "/tuwen/:type?": {
         "path": [
-          "/tuwen/:type?",
-          "/tuwen-xinxian"
+          "/tuwen/:type?"
         ],
         "categories": [
           "social-media"
@@ -17077,34 +17100,13 @@
           "type": "默认为hot"
         },
         "features": {
-          "requireConfig": false,
-          "requirePuppeteer": false,
-          "antiCrawler": false,
-          "supportBT": false,
-          "supportPodcast": false,
-          "supportScihub": false
-        },
-        "name": "图文",
-        "maintainers": [
-          "xizeyoupan"
-        ],
-        "description": "| 参数名称 | 编辑精选 | 最新   |\n  | -------- | -------- | ------ |\n  | type     | hot      | latest |",
-        "location": "tuwen.ts"
-      },
-      "/tuwen-xinxian": {
-        "path": [
-          "/tuwen/:type?",
-          "/tuwen-xinxian"
-        ],
-        "categories": [
-          "social-media"
-        ],
-        "example": "/coolapk/tuwen",
-        "parameters": {
-          "type": "默认为hot"
-        },
-        "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17128,7 +17130,13 @@
           "uid": "在个人界面右上分享-复制链接获取"
         },
         "features": {
-          "requireConfig": false,
+          "requireConfig": [
+            {
+              "name": "ALLOW_USER_HOTLINK_TEMPLATE",
+              "optional": true,
+              "description": "设置为`true`并添加`image_hotlink_template`参数来代理图片"
+            }
+          ],
           "requirePuppeteer": false,
           "antiCrawler": false,
           "supportBT": false,
@@ -17143,7 +17151,8 @@
       }
     },
     "name": "酷安",
-    "url": "coolapk.com"
+    "url": "coolapk.com",
+    "description": "\n:::tip\n即日起，多数路由图片防盗链。   \n需要将 `ALLOW_USER_HOTLINK_TEMPLATE` 环境变量设置为 `true` ，然后配置`image_hotlink_template` 。   \n详见 [#16715](https://github.com/DIYgod/RSSHub/issues/16715)   \n:::"
   },
   "coomer": {
     "routes": {
@@ -31640,6 +31649,34 @@
         ],
         "url": "pbc.gov.cn/redianzhuanti/118742/4122386/4122510/index.html",
         "location": "pbc/zcyj.ts"
+      },
+      "/pudong/zwgk": {
+        "path": "/pudong/zwgk",
+        "categories": [
+          "government"
+        ],
+        "example": "/gov/pudong/zwgk",
+        "features": {
+          "requireConfig": false,
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "radar": [
+          {
+            "source": [
+              "www.pudong.gov.cn/zwgk/zxxxgk/index.html"
+            ],
+            "target": "/pudong/zwgk"
+          }
+        ],
+        "name": "政务公开-浦东新区",
+        "maintainers": [
+          "himingway"
+        ],
+        "location": "pudong/zwgk.ts"
       },
       "/safe/business/:site?": {
         "path": "/safe/business/:site?",
@@ -62640,7 +62677,7 @@
         "maintainers": [
           "ttttmr"
         ],
-        "description": "Specify options (in the format of query string) in parameter `routeParams` parameter to extract data from JSON.\n\n| Key           | Meaning                                  | Accepted Values | Default                                    |\n| ------------- | ---------------------------------------- | --------------- | ------------------------------------------ |\n| `title`       | The title of the RSS                     | `string`        | Extracted from home page of current domain |\n| `item`        | The JSON Path as `item` element          | `string`        | Entire JSON response                       |\n| `itemTitle`   | The JSON Path as `title` in `item`       | `string`        | None                                       |\n| `itemLink`    | The JSON Path as `link` in `item`        | `string`        | None                                       |\n| `itemDesc`    | The JSON Path as `description` in `item` | `string`        | None                                       |\n| `itemPubDate` | The JSON Path as `pubDate` in `item`     | `string`        | None                                       |\n\n:::tip\nJSON Path only supports format like `a.b.c`. if you need to access arrays, like `a[0].b`, you can write it as `a.0.b`.\n:::\n\n  Parameters parsing in the above example:\n\n  | Parameter     | Value                                                                    |\n  | ------------- | ------------------------------------------------------------------------ |\n  | `url`         | `https://api.github.com/repos/ginuerzh/gost/releases`                    |\n  | `routeParams` | `title=Gost releases&itemTitle=tag_name&itemLink=html_url&itemDesc=body` |\n\n  Parsing of `routeParams` parameter:\n\n  | Parameter   | Value           |\n  | ----------- | --------------- |\n  | `title`     | `Gost releases` |\n  | `itemTitle` | `tag_name`      |\n  | `itemLink`  | `html_url`      |\n  | `itemDesc`  | `body`          |",
+        "description": "Specify options (in the format of query string) in parameter `routeParams` parameter to extract data from JSON.\n\n| Key                | Meaning                                      | Accepted Values   | Default                                    |\n| ------------------ | -------------------------------------------- | ----------------- | ------------------------------------------ |\n| `title`          | The title of the RSS                         | `string`        | Extracted from home page of current domain |\n| `item`           | The JSON Path as `item` element            | `string`        | Entire JSON response                       |\n| `itemTitle`      | The JSON Path as `title` in `item`       | `string`        | None                                       |\n| `itemLink`       | The JSON Path as `link` in `item`        | `string`        | None                                       |\n| `itemLinkPrefix` | Optional Prefix for `itemLink` value       | `string`        | None                                       |\n| `itemDesc`       | The JSON Path as `description` in `item` | `string`        | None                                       |\n| `itemPubDate`    | The JSON Path as `pubDate` in `item`     | `string`        | None                                       |\n\n:::tip\nJSON Path only supports format like `a.b.c`. if you need to access arrays, like `a[0].b`, you can write it as `a.0.b`.\n:::\n\n  Parameters parsing in the above example:\n\n  | Parameter     | Value                                                                    |\n  | ------------- | ------------------------------------------------------------------------ |\n  | `url`         | `https://api.github.com/repos/ginuerzh/gost/releases`                    |\n  | `routeParams` | `title=Gost releases&itemTitle=tag_name&itemLink=html_url&itemDesc=body` |\n\n  Parsing of `routeParams` parameter:\n\n  | Parameter   | Value           |\n  | ----------- | --------------- |\n  | `title`     | `Gost releases` |\n  | `itemTitle` | `tag_name`      |\n  | `itemLink`  | `html_url`      |\n  | `itemDesc`  | `body`          |",
         "location": "transform/json.ts"
       },
       "/transform/sitemap/:url/:routeParams?": {
@@ -73972,6 +74009,43 @@
     },
     "name": "Tianjin University 天津大学",
     "url": "cic.tju.edu.cn"
+  },
+  "tkww": {
+    "routes": {
+      "/:column{.+}?": {
+        "path": "/:column{.+}?",
+        "categories": [
+          "traditional-media"
+        ],
+        "example": "/tkww/hong_kong",
+        "parameters": {
+          "column": "欄目，默認為 home (首頁)"
+        },
+        "features": {
+          "requirePuppeteer": false,
+          "antiCrawler": false,
+          "supportBT": false,
+          "supportPodcast": false,
+          "supportScihub": false
+        },
+        "name": "新聞",
+        "maintainers": [
+          "quiniapiezoelectricity"
+        ],
+        "radar": [
+          {
+            "source": [
+              "www.tkww.hk/:column"
+            ],
+            "target": "/:column"
+          }
+        ],
+        "description": "\n:::tip\n欄目可用`名稱`或對應網頁的`path`，\n如 `https://www.tkww.hk/hong_kong` 的欄目可以填`香港`或是`hong_kong`\n而 `https://www.tkww.hk/china/shanghai` 的欄目則需填`china/shanghai`\n:::",
+        "location": "index.ts"
+      }
+    },
+    "name": "大公文匯網",
+    "url": "www.tkww.hk"
   },
   "tokeninsight": {
     "routes": {
